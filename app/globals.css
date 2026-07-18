@@ -1,0 +1,190 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* ViaFlow instrument tokens */
+  --color-signal: var(--signal);
+  --color-signal-foreground: var(--signal-foreground);
+  --color-signal-muted: var(--signal-muted);
+  --color-warning: var(--warning);
+  --color-caution: var(--caution);
+  --color-grid: var(--grid);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.5rem;
+
+  /* Warm paper + graphite ink — an analytical instrument surface. */
+  --background: oklch(0.966 0.003 106);
+  --foreground: oklch(0.235 0.008 260);
+
+  --surface: oklch(0.992 0.002 106);
+  --surface-foreground: oklch(0.235 0.008 260);
+
+  --card: oklch(0.992 0.002 106);
+  --card-foreground: oklch(0.235 0.008 260);
+
+  --popover: oklch(0.992 0.002 106);
+  --popover-foreground: oklch(0.235 0.008 260);
+
+  --primary: oklch(0.255 0.008 260);
+  --primary-foreground: oklch(0.98 0.002 106);
+
+  --secondary: oklch(0.93 0.004 106);
+  --secondary-foreground: oklch(0.28 0.008 260);
+
+  --muted: oklch(0.935 0.004 106);
+  --muted-foreground: oklch(0.53 0.008 260);
+
+  --accent: oklch(0.925 0.006 150);
+  --accent-foreground: oklch(0.28 0.02 160);
+
+  /* Signal green — the single expressive accent, used for the top-ranked
+     route and positive measurements. */
+  --signal: oklch(0.62 0.13 158);
+  --signal-foreground: oklch(0.985 0.002 106);
+  --signal-muted: oklch(0.9 0.05 158);
+
+  --warning: oklch(0.58 0.15 38);
+  --caution: oklch(0.72 0.12 78);
+
+  --destructive: oklch(0.55 0.19 27);
+
+  --border: oklch(0.9 0.004 106);
+  --input: oklch(0.88 0.004 106);
+  --ring: oklch(0.62 0.13 158);
+
+  --grid: oklch(0.905 0.004 106);
+
+  --chart-1: oklch(0.62 0.13 158);
+  --chart-2: oklch(0.55 0.02 260);
+  --chart-3: oklch(0.72 0.12 78);
+  --chart-4: oklch(0.4 0.015 260);
+  --chart-5: oklch(0.58 0.15 38);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.19 0.006 260);
+  --foreground: oklch(0.94 0.004 106);
+
+  --surface: oklch(0.225 0.007 260);
+  --surface-foreground: oklch(0.94 0.004 106);
+
+  --card: oklch(0.225 0.007 260);
+  --card-foreground: oklch(0.94 0.004 106);
+
+  --popover: oklch(0.225 0.007 260);
+  --popover-foreground: oklch(0.94 0.004 106);
+
+  --primary: oklch(0.92 0.004 106);
+  --primary-foreground: oklch(0.22 0.007 260);
+
+  --secondary: oklch(0.28 0.008 260);
+  --secondary-foreground: oklch(0.94 0.004 106);
+
+  --muted: oklch(0.28 0.008 260);
+  --muted-foreground: oklch(0.68 0.008 260);
+
+  --accent: oklch(0.3 0.02 160);
+  --accent-foreground: oklch(0.92 0.02 158);
+
+  --signal: oklch(0.7 0.14 158);
+  --signal-foreground: oklch(0.18 0.02 160);
+  --signal-muted: oklch(0.38 0.06 158);
+
+  --warning: oklch(0.68 0.15 38);
+  --caution: oklch(0.78 0.12 78);
+
+  --destructive: oklch(0.62 0.19 27);
+
+  --border: oklch(0.32 0.008 260);
+  --input: oklch(0.34 0.008 260);
+  --ring: oklch(0.7 0.14 158);
+
+  --grid: oklch(0.28 0.008 260);
+
+  --chart-1: oklch(0.7 0.14 158);
+  --chart-2: oklch(0.7 0.02 260);
+  --chart-3: oklch(0.78 0.12 78);
+  --chart-4: oklch(0.6 0.015 260);
+  --chart-5: oklch(0.68 0.15 38);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/40;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv01", "cv03", "ss01";
+  }
+  /* Tabular figures everywhere numbers matter in an instrument UI. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Animated flow along the selected schematic path. */
+@keyframes viaflow-dash {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+.viaflow-flow {
+  animation: viaflow-dash 1.2s linear infinite;
+}
+
+/* Candidate route hover affordance on the schematic. */
+.viaflow-candidate {
+  stroke-opacity: 0.28;
+  transition: stroke-opacity 0.2s ease;
+}
+.viaflow-candidate:hover {
+  stroke-opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viaflow-flow {
+    animation: none;
+  }
+}
