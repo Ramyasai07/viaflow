@@ -67,8 +67,6 @@ export interface RouteMetrics {
   reliabilityPct: number
   /** +/- minutes of ETA variance used to render a confidence band. */
   etaVarianceMin: number
-  /** Estimated CO2 output in kilograms. */
-  co2Kg: number
   /** Toll / access cost in local currency units. */
   costUnits: number
 }
@@ -120,6 +118,26 @@ export interface ScoredRoute extends Route {
   score: RouteScore
   /** 1-based rank within the plan (1 = best). */
   rank: number
+}
+
+export interface PlanRequest {
+  originId: string
+  destinationId: string
+  weights: Weights
+}
+
+export interface RoutePlan {
+  origin: Place
+  destination: Place
+  weights: Weights
+  options: ScoredRoute[]
+  computedAt: string
+  computeMs: number
+}
+
+export interface SchematicPoint {
+  x: number
+  y: number
 }
 
 /**

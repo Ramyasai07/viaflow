@@ -121,7 +121,6 @@ export function RouteDetail({ route }: { route: ScoredRoute | null }) {
           value={formatEtaWindow(m.durationMin, m.etaVarianceMin)}
         />
         <Readout label="Variance" value={`±${m.etaVarianceMin}`} unit="min" />
-        <Readout label="CO₂ output" value={m.co2Kg.toFixed(1)} unit="kg" />
         <Readout
           label="Access cost"
           value={m.costUnits === 0 ? "None" : m.costUnits.toFixed(1)}
