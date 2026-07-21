@@ -8,7 +8,7 @@ import { AppHeader } from "./app-header"
 import { PlannerPanel } from "./planner-panel"
 import { RouteList } from "./route-list"
 import { RouteDetail } from "./route-detail"
-import { SchematicMap } from "./schematic-map"
+import { LiveMap } from "./live-map"
 import { FieldLabel, Swatch } from "./primitives"
 
 const DEFAULT_WEIGHTS: Weights = { time: 5, distance: 5, reliability: 5 }
@@ -141,7 +141,7 @@ export function ViaFlowApp() {
         <div className="lg:col-span-4">
           <div className="flex flex-col gap-4 lg:sticky lg:top-20">
             {plan ? (
-              <SchematicMap
+              <LiveMap
                 plan={plan}
                 selectedRouteId={selectedRoute?.id ?? null}
                 onSelect={setSelectedRouteId}
