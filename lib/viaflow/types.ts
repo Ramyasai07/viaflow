@@ -28,7 +28,7 @@ export type PlaceKind = "origin" | "hub" | "landmark" | "district" | "terminal"
 
 export interface Place {
   id: string
-  /** Short display name, e.g. "Kester Yard". */
+  /** Short display name, e.g. "Gachibowli Junction". */
   name: string
   /** Secondary descriptor, e.g. "Logistics terminal · Sector 4". */
   detail: string
