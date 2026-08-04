@@ -131,60 +131,17 @@ export async function geocodeHyderabad(query: string): Promise<Place[]> {
   const cached = getCachedGeocode(trimmed)
   if (cached) return cached
 
-  // Query Nominatim API with spatial bias and strict viewbox
-  const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
-    query
-  )}&format=json&viewbox=78.2,17.2,78.6,17.6&bounded=1&addressdetails=1&limit=8`
+  // Query internal API
+  const url = `/api/geocode?q=${encodeURIComponent(query)}`
 
   try {
-    const res = await fetch(url, {
-      headers: {
-        "User-Agent": "ViaFlow-Hyderabad-Spatial-Engine/1.0",
-      },
-    })
+    const res = await fetch(url)
 
     if (!res.ok) {
-      throw new Error(`Nominatim error: HTTP ${res.status}`)
+      throw new Error(`Internal geocoding API error: HTTP ${res.status}`)
     }
 
-    const data = (await res.json()) as NominatimResult[]
-
-    const formatted: Place[] = data
-      .map((item) => {
-        const lat = parseFloat(item.lat)
-        const lon = parseFloat(item.lon)
-
-        // Strict post-fetch validation filter
-        if (!isWithinHyderabad(lat, lon)) {
-          return null
-        }
-
-        // Clean display name by splitting commas
-        const nameParts = item.display_name.split(",")
-        const name = nameParts[0].trim()
-        const detail = nameParts.slice(1, 3).map((p) => p.trim()).join(", ") || "Hyderabad, India"
-
-        let kind: Place["kind"] = "landmark"
-        if (item.class === "highway" || item.type === "bus_stop" || item.type === "station") {
-          kind = "terminal"
-        } else if (item.class === "boundary" || item.class === "place") {
-          kind = "district"
-        } else if (item.type === "townhall" || item.type === "university" || item.type === "hospital") {
-          kind = "hub"
-        }
-
-        return {
-          id: `osm-${item.osm_id}`,
-          name,
-          detail,
-          kind,
-          location: {
-            type: "Point" as const,
-            coordinates: [lon, lat] as [number, number],
-          },
-        }
-      })
-      .filter((p): p is Place => p !== null)
+    const formatted = (await res.json()) as Place[]
 
     setCachedGeocode(trimmed, formatted)
     return formatted
