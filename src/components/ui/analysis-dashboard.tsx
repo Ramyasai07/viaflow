@@ -204,13 +204,6 @@ export function AnalysisDashboard({
                 Hyderabad Box (Bounded)
               </span>
             </div>
-            <div className="h-6 w-px bg-[#2A2E38]" />
-            <div className="flex flex-col gap-0.5">
-              <FieldLabel>Confidence</FieldLabel>
-              <span className="font-mono text-[0.68rem] font-semibold text-[#10B981]">
-                98.4% Optimal Heuristic
-              </span>
-            </div>
           </div>
         </div>
       </div>
