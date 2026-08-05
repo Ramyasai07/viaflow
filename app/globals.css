@@ -24,7 +24,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* ViaFlow instrument tokens */
+  /* ViaFlow Computation Engine Tokens */
   --color-signal: var(--signal);
   --color-signal-foreground: var(--signal-foreground);
   --color-signal-muted: var(--signal-muted);
@@ -32,7 +32,9 @@
   --color-caution: var(--caution);
   --color-grid: var(--grid);
   --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
   --color-surface-foreground: var(--surface-foreground);
+  --color-amber-glow: var(--amber-glow);
 
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -40,151 +42,254 @@
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  --font-mono: var(--font-geist-mono), "JetBrains Mono", "SF Mono", monospace;
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   --radius: 0.5rem;
 
-  /* Warm paper + graphite ink — an analytical instrument surface. */
-  --background: oklch(0.966 0.003 106);
-  --foreground: oklch(0.235 0.008 260);
+  /* Default theme is high-precision dark urban mobility engine. */
+  --background: #111318;
+  --foreground: #F3F4F6;
 
-  --surface: oklch(0.992 0.002 106);
-  --surface-foreground: oklch(0.235 0.008 260);
+  --surface: #1A1D24;
+  --surface-hover: #222630;
+  --surface-foreground: #F3F4F6;
 
-  --card: oklch(0.992 0.002 106);
-  --card-foreground: oklch(0.235 0.008 260);
+  --card: #1A1D24;
+  --card-foreground: #F3F4F6;
 
-  --popover: oklch(0.992 0.002 106);
-  --popover-foreground: oklch(0.235 0.008 260);
+  --popover: #1A1D24;
+  --popover-foreground: #F3F4F6;
 
-  --primary: oklch(0.255 0.008 260);
-  --primary-foreground: oklch(0.98 0.002 106);
+  /* ViaFlow Amber Identity */
+  --primary: #E08E45;
+  --primary-foreground: #111318;
 
-  --secondary: oklch(0.93 0.004 106);
-  --secondary-foreground: oklch(0.28 0.008 260);
+  --secondary: #8B93A7;
+  --secondary-foreground: #F3F4F6;
 
-  --muted: oklch(0.935 0.004 106);
-  --muted-foreground: oklch(0.53 0.008 260);
+  --muted: #232731;
+  --muted-foreground: #8B93A7;
 
-  --accent: oklch(0.925 0.006 150);
-  --accent-foreground: oklch(0.28 0.02 160);
+  --accent: #E08E45;
+  --accent-foreground: #111318;
 
-  /* Signal green — the single expressive accent, used for the top-ranked
-     route and positive measurements. */
-  --signal: oklch(0.62 0.13 158);
-  --signal-foreground: oklch(0.985 0.002 106);
-  --signal-muted: oklch(0.9 0.05 158);
+  --signal: #10B981;
+  --signal-foreground: #042F2E;
+  --signal-muted: rgba(16, 185, 129, 0.15);
 
-  --warning: oklch(0.58 0.15 38);
-  --caution: oklch(0.72 0.12 78);
+  --warning: #F87171;
+  --caution: #F59E0B;
 
-  --destructive: oklch(0.55 0.19 27);
+  --destructive: #EF4444;
 
-  --border: oklch(0.9 0.004 106);
-  --input: oklch(0.88 0.004 106);
-  --ring: oklch(0.62 0.13 158);
+  --border: #2A2E38;
+  --input: #2A2E38;
+  --ring: rgba(224, 142, 69, 0.4);
 
-  --grid: oklch(0.905 0.004 106);
+  --grid: #1F232D;
+  --amber-glow: rgba(224, 142, 69, 0.18);
 
-  --chart-1: oklch(0.62 0.13 158);
-  --chart-2: oklch(0.55 0.02 260);
-  --chart-3: oklch(0.72 0.12 78);
-  --chart-4: oklch(0.4 0.015 260);
-  --chart-5: oklch(0.58 0.15 38);
+  --chart-1: #E08E45; /* Reliability / Primary Amber */
+  --chart-2: #60A5FA; /* Travel Time Blue-Cyan */
+  --chart-3: #F59E0B; /* Distance Amber-Gold */
+  --chart-4: #8B93A7;
+  --chart-5: #F87171;
 }
 
 .dark {
   color-scheme: dark;
-  --background: oklch(0.19 0.006 260);
-  --foreground: oklch(0.94 0.004 106);
+  --background: #111318;
+  --foreground: #F3F4F6;
 
-  --surface: oklch(0.225 0.007 260);
-  --surface-foreground: oklch(0.94 0.004 106);
+  --surface: #1A1D24;
+  --surface-hover: #222630;
+  --surface-foreground: #F3F4F6;
 
-  --card: oklch(0.225 0.007 260);
-  --card-foreground: oklch(0.94 0.004 106);
+  --card: #1A1D24;
+  --card-foreground: #F3F4F6;
 
-  --popover: oklch(0.225 0.007 260);
-  --popover-foreground: oklch(0.94 0.004 106);
+  --popover: #1A1D24;
+  --popover-foreground: #F3F4F6;
 
-  --primary: oklch(0.92 0.004 106);
-  --primary-foreground: oklch(0.22 0.007 260);
+  --primary: #E08E45;
+  --primary-foreground: #111318;
 
-  --secondary: oklch(0.28 0.008 260);
-  --secondary-foreground: oklch(0.94 0.004 106);
+  --secondary: #8B93A7;
+  --secondary-foreground: #F3F4F6;
 
-  --muted: oklch(0.28 0.008 260);
-  --muted-foreground: oklch(0.68 0.008 260);
+  --muted: #232731;
+  --muted-foreground: #8B93A7;
 
-  --accent: oklch(0.3 0.02 160);
-  --accent-foreground: oklch(0.92 0.02 158);
+  --accent: #E08E45;
+  --accent-foreground: #111318;
 
-  --signal: oklch(0.7 0.14 158);
-  --signal-foreground: oklch(0.18 0.02 160);
-  --signal-muted: oklch(0.38 0.06 158);
+  --signal: #10B981;
+  --signal-foreground: #042F2E;
+  --signal-muted: rgba(16, 185, 129, 0.15);
 
-  --warning: oklch(0.68 0.15 38);
-  --caution: oklch(0.78 0.12 78);
+  --warning: #F87171;
+  --caution: #F59E0B;
 
-  --destructive: oklch(0.62 0.19 27);
+  --destructive: #EF4444;
 
-  --border: oklch(0.32 0.008 260);
-  --input: oklch(0.34 0.008 260);
-  --ring: oklch(0.7 0.14 158);
+  --border: #2A2E38;
+  --input: #2A2E38;
+  --ring: rgba(224, 142, 69, 0.4);
 
-  --grid: oklch(0.28 0.008 260);
+  --grid: #1F232D;
+  --amber-glow: rgba(224, 142, 69, 0.18);
 
-  --chart-1: oklch(0.7 0.14 158);
-  --chart-2: oklch(0.7 0.02 260);
-  --chart-3: oklch(0.78 0.12 78);
-  --chart-4: oklch(0.6 0.015 260);
-  --chart-5: oklch(0.68 0.15 38);
+  --chart-1: #E08E45;
+  --chart-2: #60A5FA;
+  --chart-3: #F59E0B;
+  --chart-4: #8B93A7;
+  --chart-5: #F87171;
+}
+
+.light {
+  color-scheme: light;
+  --background: #F4F5F7;
+  --foreground: #111318;
+
+  --surface: #FFFFFF;
+  --surface-hover: #F8F9FA;
+  --surface-foreground: #111318;
+
+  --card: #FFFFFF;
+  --card-foreground: #111318;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #111318;
+
+  --primary: #D97706;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #6B7280;
+  --secondary-foreground: #111318;
+
+  --muted: #E5E7EB;
+  --muted-foreground: #6B7280;
+
+  --accent: #D97706;
+  --accent-foreground: #FFFFFF;
+
+  --signal: #059669;
+  --signal-foreground: #FFFFFF;
+  --signal-muted: rgba(5, 150, 105, 0.12);
+
+  --warning: #DC2626;
+  --caution: #D97706;
+
+  --destructive: #DC2626;
+
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: rgba(217, 119, 6, 0.4);
+
+  --grid: #E5E7EB;
+  --amber-glow: rgba(217, 119, 6, 0.15);
+
+  --chart-1: #D97706;
+  --chart-2: #2563EB;
+  --chart-3: #D97706;
+  --chart-4: #6B7280;
+  --chart-5: #DC2626;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/40;
+    @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "cv01", "cv03", "ss01";
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv01", "cv03", "ss01", "tnum";
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(224, 142, 69, 0.07), transparent 100%),
+      linear-gradient(to bottom, #111318, #111318);
   }
-  /* Tabular figures everywhere numbers matter in an instrument UI. */
+  
+  /* Precision tabular numbers */
   .tabular {
     font-variant-numeric: tabular-nums;
   }
 }
 
-/* Animated flow along the selected schematic path. */
+/* Engine status radar pulse */
+@keyframes engine-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(224, 142, 69, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(224, 142, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(224, 142, 69, 0);
+  }
+}
+
+.engine-pulse-dot {
+  animation: engine-pulse 2s infinite;
+}
+
+/* Animated flow along the selected corridor path */
 @keyframes viaflow-dash {
   to {
-    stroke-dashoffset: -32;
+    stroke-dashoffset: -40;
   }
 }
 .viaflow-flow {
-  animation: viaflow-dash 1.2s linear infinite;
+  stroke-dasharray: 8 6;
+  animation: viaflow-dash 1s linear infinite;
 }
 
-/* Candidate route hover affordance on the schematic. */
-.viaflow-candidate {
-  stroke-opacity: 0.28;
-  transition: stroke-opacity 0.2s ease;
+/* Map tiles styling overrides */
+.leaflet-container {
+  background-color: #111318 !important;
+  font-family: var(--font-sans) !important;
 }
-.viaflow-candidate:hover {
-  stroke-opacity: 0.6;
+
+/* Muted Leaflet attribution */
+.leaflet-control-attribution {
+  background: rgba(17, 19, 24, 0.75) !important;
+  color: #8B93A7 !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(4px);
+  border-top-left-radius: 4px;
+}
+.leaflet-control-attribution a {
+  color: #E08E45 !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111318;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2E38;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E08E45;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .viaflow-flow {
+    animation: none;
+  }
+  .engine-pulse-dot {
     animation: none;
   }
 }

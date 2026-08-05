@@ -1,5 +1,5 @@
-import { ViaFlowApp } from "@/components/viaflow/viaflow-app"
+import { ViaFlowRoot } from "@/src/components/ui/viaflow-root"
 
 export default function Page() {
-  return <ViaFlowApp />
+  return <ViaFlowRoot />
 }

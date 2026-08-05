@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'ViaFlow — Route Intelligence',
+  title: 'ViaFlow — Urban Mobility Computation Engine',
   description:
-    'ViaFlow ranks route options with a transparent, weighted score across time, distance, and reliability. An analytical instrument for routing decisions.',
+    'Real-time strategy evaluation and deterministic route optimization across Hyderabad. A high-precision urban mobility computation engine.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light',
-  themeColor: '#f2f1ee',
+  colorScheme: 'dark',
+  themeColor: '#111318',
 }
 
 export default function RootLayout({
@@ -50,9 +50,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`light ${geistSans.variable} ${geistMono.variable} bg-background`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} bg-background text-foreground`}
     >
-      <body className="antialiased font-sans">
+      <body className="antialiased font-sans selection:bg-[#E08E45]/30 selection:text-[#E08E45]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
