@@ -1,16 +1,16 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
-const geistSans = Geist({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-geist-sans',
+  variable: '--font-sans',
 })
 
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  variable: '--font-geist-mono',
+  variable: '--font-mono',
 })
 
 export const metadata: Metadata = {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#111318',
+  themeColor: '#111113',
 }
 
 export default function RootLayout({
@@ -50,9 +50,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${geistSans.variable} ${geistMono.variable} bg-background text-foreground`}
+      className={`dark ${inter.variable} ${jetbrainsMono.variable} bg-background text-foreground`}
     >
-      <body className="antialiased font-sans selection:bg-[#E08E45]/30 selection:text-[#E08E45]">
+      <body className="antialiased font-sans selection:bg-[#F5A623]/30 selection:text-[#F5A623]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

@@ -103,7 +103,7 @@ function AutocompleteInput({
 
   return (
     <div className="relative flex flex-col gap-1.5" ref={containerRef}>
-      <label className="font-mono text-[0.625rem] font-bold uppercase tracking-[0.16em] text-[#8B93A7]">
+      <label className="font-mono text-[12px] font-medium tracking-wide text-[#8A8A95]">
         {label}
       </label>
       <div className="relative flex items-center">
@@ -113,13 +113,13 @@ function AutocompleteInput({
           onFocus={handleFocus}
           onChange={handleInputChange}
           placeholder={placeholder}
-          className="w-full rounded-lg border border-[#2A2E38] bg-[#111318] px-3.5 py-2.5 font-sans text-sm text-[#F3F4F6] placeholder-[#8B93A7]/50 shadow-inner outline-none transition-colors focus:border-[#E08E45]/80"
+          className="w-full rounded-lg border border-[#2A2A32] bg-[#1A1A1E] px-3.5 py-2.5 font-sans text-sm text-[#E8E8EC] placeholder-[#6A6A75] outline-none transition-all focus:border-[#F5A623] focus:ring-1 focus:ring-[#F5A623]"
         />
         {query && (
           <button
             type="button"
             onClick={handleClear}
-            className="absolute right-3.5 text-[#8B93A7] hover:text-[#F3F4F6] cursor-pointer"
+            className="absolute right-3.5 text-[#8A8A95] hover:text-[#E8E8EC] cursor-pointer outline-none focus-visible:ring-1 focus-visible:ring-[#F5A623] rounded"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="18" y1="6" x2="6" y2="18" />
@@ -130,14 +130,14 @@ function AutocompleteInput({
       </div>
 
       {isOpen && (
-        <div className="absolute top-[calc(100%+4px)] z-[500] w-full max-h-56 overflow-y-auto rounded-lg border border-[#2A2E38] bg-[#1A1D24] shadow-xl backdrop-blur-md">
+        <div className="absolute top-[calc(100%+4px)] z-[500] w-full max-h-56 overflow-y-auto rounded-lg border border-[#2A2A32] bg-[#1A1A1E] shadow-none backdrop-blur-md">
           {loading && (
-            <div className="px-3.5 py-3 font-mono text-[0.68rem] text-[#8B93A7] animate-pulse">
+            <div className="px-3.5 py-3 font-mono text-[11px] text-[#8A8A95] animate-pulse">
               Searching OpenStreetMap...
             </div>
           )}
           {!loading && suggestions.length === 0 && (
-            <div className="px-3.5 py-3 font-mono text-[0.68rem] text-[#8B93A7]">
+            <div className="px-3.5 py-3 font-mono text-[11px] text-[#8A8A95]">
               No Hyderabad locations found
             </div>
           )}
@@ -146,10 +146,10 @@ function AutocompleteInput({
               key={s.id}
               type="button"
               onClick={() => handleSuggestionClick(s)}
-              className="flex w-full flex-col gap-0.5 px-3.5 py-2.5 text-left transition-colors hover:bg-[#222630] cursor-pointer"
+              className="flex w-full flex-col gap-0.5 px-3.5 py-2.5 text-left transition-colors hover:bg-[#23232A] cursor-pointer outline-none focus:bg-[#23232A]"
             >
               <span className="font-sans text-xs font-semibold text-foreground">{s.name}</span>
-              <span className="font-mono text-[0.625rem] text-[#8B93A7] truncate">{s.detail}</span>
+              <span className="font-mono text-[11px] text-[#8A8A95] truncate">{s.detail}</span>
             </button>
           ))}
         </div>
@@ -172,40 +172,49 @@ function WeightSlider({
   onValueChange: (value: number) => void
 }) {
   return (
-    <div className="flex flex-col gap-2 rounded-lg border border-[#2A2E38]/60 bg-[#16181F] p-3.5 transition-colors hover:border-[#2A2E38]">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <span className={cn("size-2.5 rounded-sm", swatchClass)} aria-hidden />
-          <span className="font-sans text-sm font-semibold text-foreground tracking-tight">
-            {label} Weight
-          </span>
-        </div>
-        <span className="tabular font-mono text-xs font-bold text-[#E08E45]">
-          Weight: {value}/10
+    <div className="flex flex-col gap-3 rounded-lg border border-[#2A2A32] bg-[#23232A] p-4 transition-all duration-150 hover:border-[#F5A623]/35">
+      {/* Label section */}
+      <div className="flex items-center gap-2">
+        <span className={cn("size-2 rounded-sm", swatchClass)} aria-hidden />
+        <span className="font-sans text-[12px] font-medium text-[#8A8A95] tracking-tight">
+          {label} Optimization Weight
         </span>
       </div>
 
-      <div className="py-1">
-        <Slider.Root
-          value={value}
-          min={0}
-          max={10}
-          step={1}
-          onValueChange={(next) =>
-            onValueChange(Array.isArray(next) ? next[0] : (next as number))
-          }
-          aria-label={`${label} optimization weight`}
-        >
-          <Slider.Control className="flex h-5 w-full items-center cursor-pointer">
-            <Slider.Track className="h-1.5 w-full rounded-full bg-[#232731]">
-              <Slider.Indicator className="rounded-full bg-[#E08E45]" />
-              <Slider.Thumb className="size-4.5 rounded-full border-2 border-[#E08E45] bg-[#111318] shadow-[0_0_10px_rgba(224,142,69,0.5)] outline-none transition-all focus-visible:ring-2 focus-visible:ring-[#E08E45] data-dragging:scale-125" />
-            </Slider.Track>
-          </Slider.Control>
-        </Slider.Root>
+      {/* Row containing Slider track and value side-by-side */}
+      <div className="flex items-center gap-4">
+        {/* Slider control area */}
+        <div className="flex-1 py-1">
+          <Slider.Root
+            value={value}
+            min={0}
+            max={10}
+            step={1}
+            onValueChange={(next) =>
+              onValueChange(Array.isArray(next) ? next[0] : (next as number))
+            }
+            aria-label={`${label} optimization weight`}
+          >
+            <Slider.Control className="flex h-5 w-full items-center cursor-pointer">
+              {/* Track background: #2A2A32, height: 4px */}
+              <Slider.Track className="relative h-1 w-full rounded-full bg-[#2A2A32]">
+                {/* Active track: #F5A623 */}
+                <Slider.Indicator className="absolute h-full rounded-full bg-[#F5A623]" />
+                {/* Thumb: compact, 16px (size-4), amber #F5A623, subtle hover scale/glow, focus ring */}
+                <Slider.Thumb className="block size-4 rounded-full bg-[#F5A623] hover:scale-110 active:scale-125 focus:scale-110 shadow-[0_0_8px_rgba(245,166,35,0.4)] hover:shadow-[0_0_12px_rgba(245,166,35,0.6)] outline-none transition-all focus-visible:ring-2 focus-visible:ring-[#F5A623]" />
+              </Slider.Track>
+            </Slider.Control>
+          </Slider.Root>
+        </div>
+
+        {/* Numeric value: monospace, amber, ~16px */}
+        <span className="tabular font-mono text-[16px] font-medium text-[#F5A623] min-w-[20px] text-right">
+          {value}
+        </span>
       </div>
 
-      <div className="text-xs text-[#8B93A7]">{description}</div>
+      {/* Description */}
+      <div className="text-[11px] font-mono text-[#8A8A95]/90">{description}</div>
     </div>
   )
 }
@@ -232,11 +241,11 @@ export function QueryConfigurator({
   }
 
   return (
-    <div className="flex flex-col gap-6 rounded-xl border border-[#2A2E38] bg-[#1A1D24] p-5 md:p-6 shadow-xl">
-      <div className="flex items-center justify-between border-b border-[#2A2E38]/80 pb-3">
+    <div className="flex flex-col gap-6 rounded-xl border border-[#2A2A32] bg-[#1A1A1E] p-5 md:p-6 shadow-none">
+      <div className="flex items-center justify-between border-b border-[#2A2A32] pb-3">
         <div className="flex items-center gap-2">
-          <span className="inline-block size-2 rounded-full bg-[#E08E45]" />
-          <span className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.18em] text-[#E08E45]">
+          <span className="inline-block size-2 rounded-full bg-[#F5A623]" />
+          <span className="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[#F5A623]">
             HYDERABAD SPATIAL CONFIGURATOR
           </span>
         </div>
@@ -262,7 +271,7 @@ export function QueryConfigurator({
 
       {/* Quick select tokens */}
       <div className="flex flex-col gap-2">
-        <span className="font-mono text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-[#8B93A7]">
+        <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8A8A95]">
           Quick-Select Corridor Hubs
         </span>
         <div className="flex flex-wrap gap-2">
@@ -275,12 +284,14 @@ export function QueryConfigurator({
               <button
                 key={hub.id}
                 type="button"
+                disabled={isDisabled}
                 onClick={() => handleQuickSelect(hub)}
                 className={cn(
-                  "rounded-lg border px-2.5 py-1.5 font-mono text-[0.68rem] font-medium tracking-tight transition-all cursor-pointer",
-                  isOrigin && "border-[#8B93A7] bg-[#8B93A7]/10 text-foreground",
-                  isDest && "border-[#E08E45] bg-[#E08E45]/15 text-[#E08E45]",
-                  !isOrigin && !isDest && "border-[#2A2E38] bg-[#111318] text-[#8B93A7] hover:border-[#3A3F4D] hover:text-foreground"
+                  "rounded-lg border px-2.5 py-1.5 font-mono text-[11px] font-medium tracking-tight transition-all cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-[#F5A623]",
+                  isOrigin && "border-[#8A8A95] bg-[#8A8A95]/10 text-foreground",
+                  isDest && "border-[#F5A623] bg-[#F5A623]/15 text-[#F5A623]",
+                  !isOrigin && !isDest && "border-[#2A2A32] bg-[#111113] text-[#8A8A95] hover:border-[#F5A623] hover:text-[#E8E8EC]",
+                  isDisabled && "opacity-30 cursor-not-allowed hover:border-[#2A2A32] hover:text-[#8A8A95]"
                 )}
               >
                 {hub.name.split(" ")[0]}
@@ -292,7 +303,7 @@ export function QueryConfigurator({
 
       {/* Optimization weights */}
       <div className="flex flex-col gap-3">
-        <span className="font-mono text-[0.625rem] font-bold uppercase tracking-[0.16em] text-[#8B93A7]">
+        <span className="font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-[#8A8A95]">
           Multi-Criteria Optimization Weights
         </span>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -306,14 +317,14 @@ export function QueryConfigurator({
           <WeightSlider
             label="Distance"
             description="Favor shortest spatial length (wd)."
-            swatchClass="bg-[#F59E0B]"
+            swatchClass="bg-[#F5A623]"
             value={weights.distance}
             onValueChange={(v) => onWeightsChange({ ...weights, distance: v })}
           />
           <WeightSlider
             label="Corridor Grade"
             description="Prefer flyovers/expressways vs streets (wf)."
-            swatchClass="bg-[#E08E45]"
+            swatchClass="bg-[#F5A623]"
             value={weights.reliability}
             onValueChange={(v) => onWeightsChange({ ...weights, reliability: v })}
           />
@@ -326,8 +337,8 @@ export function QueryConfigurator({
         disabled={!origin || !destination || loading}
         onClick={onCompute}
         className={cn(
-          "w-full rounded-xl py-3.5 font-mono text-xs font-bold uppercase tracking-widest text-[#111318] bg-[#E08E45] hover:bg-[#f09f56] active:scale-[0.98] transition-all shadow-[0_4px_16px_rgba(224,142,69,0.25)] cursor-pointer text-center",
-          (!origin || !destination || loading) && "opacity-40 cursor-not-allowed bg-[#2A2E38] text-[#8B93A7] shadow-none"
+          "w-full rounded-lg py-2.5 px-5 font-sans text-sm font-semibold uppercase tracking-wider text-[#E8E8EC] bg-[#F5A623] hover:bg-[#F7B84D] active:scale-[0.98] transition-all cursor-pointer text-center outline-none focus-visible:ring-2 focus-visible:ring-[#F5A623] focus-visible:ring-offset-2 focus-visible:ring-offset-[#111113]",
+          (!origin || !destination || loading) && "opacity-45 cursor-not-allowed bg-[#2A2A32] text-[#8A8A95] hover:bg-[#2A2A32] border-[#2A2A32] shadow-none"
         )}
       >
         {loading ? "RUNNING DETERMINISTIC ANALYSIS..." : "RUN HYDERABAD SPATIAL CORRIDOR ANALYSIS"}

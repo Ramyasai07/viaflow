@@ -13,7 +13,7 @@ export function FieldLabel({
   return (
     <span
       className={cn(
-        "font-mono text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-[#8B93A7]",
+        "font-mono text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-[#8A8A95]",
         className
       )}
     >
@@ -32,10 +32,10 @@ export function Chip({
   className?: string
 }) {
   const styles = {
-    default: "border-[#2A2E38] bg-[#1A1D24] text-[#8B93A7]",
-    accent: "border-[#E08E45]/40 bg-[#E08E45]/10 text-[#E08E45]",
-    success: "border-[#10B981]/40 bg-[#10B981]/10 text-[#10B981]",
-    muted: "border-[#2A2E38] bg-[#111318] text-[#8B93A7]",
+    default: "border-[#2A2A32] bg-[#1A1A1E] text-[#8A8A95]",
+    accent: "border-[#F5A623]/40 bg-[#F5A623]/10 text-[#F5A623]",
+    success: "border-[#34D399]/40 bg-[#34D399]/10 text-[#34D399]",
+    muted: "border-[#2A2A32] bg-[#111113] text-[#8A8A95]",
   }
 
   return (
@@ -74,13 +74,13 @@ export function Readout({
           className={cn(
             "tabular font-mono tracking-tight font-semibold leading-none",
             emphasis ? "text-xl text-foreground" : "text-sm text-foreground",
-            accent && "text-[#E08E45]"
+            accent && "text-[#F5A623]"
           )}
         >
           {value}
         </span>
         {unit ? (
-          <span className="font-mono text-[0.68rem] text-[#8B93A7]">{unit}</span>
+          <span className="font-mono text-[0.68rem] text-[#8A8A95]">{unit}</span>
         ) : null}
       </div>
     </div>

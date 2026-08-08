@@ -47,19 +47,19 @@ export function ViaFlowRoot() {
   }
 
   return (
-    <div className="min-h-screen bg-[#111318] text-[#F3F4F6] flex flex-col font-sans">
+    <div className="min-h-screen bg-[#111113] text-[#E8E8EC] flex flex-col font-sans">
       {phase === "input" ? (
         <div className="flex-1 flex flex-col justify-between">
           {/* Header */}
-          <header className="border-b border-[#2A2E38] bg-[#16181F]/70 px-4 py-4 md:px-6">
+          <header className="border-b border-[#2A2A32] bg-[#1A1A1E]/70 px-4 py-4 md:px-6">
             <div className="mx-auto max-w-[1200px] flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="inline-block size-3 rounded-full bg-[#E08E45]" />
-                <span className="font-sans text-sm font-bold text-foreground tracking-tight">
+                <span className="inline-block size-3 rounded-full bg-[#F5A623]" />
+                <span className="font-sans text-sm font-bold text-[#E8E8EC] tracking-tight">
                   ViaFlow — Urban Mobility Computation Engine
                 </span>
               </div>
-              <span className="font-mono text-[0.625rem] text-[#8B93A7] border border-[#2A2E38] rounded px-2 py-0.5">
+              <span className="font-mono text-[11px] text-[#8A8A95] border border-[#2A2A32] rounded px-2 py-0.5">
                 v2.5 · Hyderabad Edition
               </span>
             </div>
@@ -68,16 +68,16 @@ export function ViaFlowRoot() {
           {/* Main Form container */}
           <main className="mx-auto w-full max-w-[1000px] px-4 py-12 flex-1 flex flex-col justify-center gap-6">
             <div className="text-center max-w-xl mx-auto space-y-2 mb-4">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              <h2 className="text-[28px] font-bold tracking-tight text-[#E8E8EC] sm:text-3xl">
                 Continuous Strategy Evaluation
               </h2>
-              <p className="text-sm text-[#8B93A7] leading-relaxed">
+              <p className="text-sm text-[#8A8A95] leading-relaxed">
                 Analyze and score spatial transit corridors in Hyderabad using real OpenStreetMap networks. Adjust optimization weights to dynamically update strategy models.
               </p>
             </div>
 
             {error && (
-              <div className="rounded-xl border border-[#F87171]/40 bg-[#F87171]/10 p-4 font-mono text-xs text-[#F87171] max-w-2xl mx-auto w-full flex items-start gap-3">
+              <div className="rounded-xl border border-[#EF4444]/45 bg-[#EF4444]/10 p-4 font-mono text-xs text-[#EF4444] max-w-2xl mx-auto w-full flex items-start gap-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="mt-0.5 shrink-0">
                   <circle cx="12" cy="12" r="10" />
                   <line x1="12" y1="8" x2="12" y2="12" />
@@ -105,10 +105,10 @@ export function ViaFlowRoot() {
           </main>
 
           {/* Footer */}
-          <footer className="border-t border-[#2A2E38] bg-[#111318] px-4 py-6 md:px-6">
-            <div className="mx-auto max-w-[1200px] flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[0.68rem] text-[#8B93A7]">
+          <footer className="border-t border-[#2A2A32] bg-[#111113] px-4 py-6 md:px-6">
+            <div className="mx-auto max-w-[1200px] flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[11px] text-[#8A8A95]">
               <div className="flex items-center gap-2">
-                <span className="size-1.5 rounded-full bg-[#10B981]" />
+                <span className="size-1.5 rounded-full bg-[#34D399]" />
                 <span>HYDERABAD CORRIDOR NETWORK · OPENSTREETMAP PIPELINE</span>
               </div>
               <div>

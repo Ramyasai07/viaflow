@@ -30,15 +30,15 @@ function createOriginIcon() {
         position: relative;
         width: 20px;
         height: 20px;
-        background: #111318;
-        border: 2px solid #8B93A7;
+        background: #111113;
+        border: 2px solid #8A8A95;
         border-radius: 50%;
-        box-shadow: 0 0 12px rgba(0,0,0,0.8);
+        box-shadow: 0 0 6px rgba(0,0,0,0.5);
         display: flex;
         align-items: center;
         justify-content: center;
       ">
-        <div style="width: 6px; height: 6px; background: #F3F4F6; border-radius: 50%;"></div>
+        <div style="width: 6px; height: 6px; background: #E8E8EC; border-radius: 50%;"></div>
       </div>
     `,
     iconSize: [20, 20],
@@ -54,15 +54,15 @@ function createDestinationIcon() {
         position: relative;
         width: 24px;
         height: 24px;
-        background: #E08E45;
-        border: 3px solid #111318;
+        background: #F5A623;
+        border: 3px solid #111113;
         border-radius: 50%;
-        box-shadow: 0 0 20px rgba(224, 142, 69, 0.8);
+        box-shadow: 0 0 12px rgba(245, 166, 35, 0.5);
         display: flex;
         align-items: center;
         justify-content: center;
       ">
-        <div style="width: 6px; height: 6px; background: #111318; border-radius: 50%;"></div>
+        <div style="width: 6px; height: 6px; background: #111113; border-radius: 50%;"></div>
       </div>
     `,
     iconSize: [24, 24],
@@ -99,7 +99,7 @@ function MapControls({ onRecenter }: { onRecenter: () => void }) {
         type="button"
         onClick={onRecenter}
         title="Recenter corridor bounds"
-        className="flex size-8 items-center justify-center rounded border border-[#2A2E38] bg-[#1A1D24]/90 text-[#8B93A7] shadow-lg backdrop-blur-md transition-colors hover:border-[#E08E45] hover:text-[#E08E45] cursor-pointer"
+        className="flex size-8 items-center justify-center rounded border border-[#2A2A32] bg-[#1A1A1E]/90 text-[#8A8A95] shadow-none backdrop-blur-md transition-colors hover:border-[#F5A623] hover:text-[#F5A623] cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-[#F5A623]"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="12" cy="12" r="10" />
@@ -145,13 +145,13 @@ export function LiveMapInner({
   const destinationLatLng = toLeafletLatLng(destination.location.coordinates)
 
   return (
-    <div className="relative aspect-[4/3] w-full min-h-[340px] md:aspect-square overflow-hidden rounded-xl border border-[#2A2E38] bg-[#1A1D24] shadow-xl">
+    <div className="relative aspect-[4/3] w-full min-h-[340px] md:aspect-square overflow-hidden rounded-xl border border-[#2A2A32] bg-[#1A1A1E] shadow-none">
       <MapContainer
         key={mapKey}
         center={HYDERABAD_CENTER}
         zoom={12}
         scrollWheelZoom={false}
-        className="h-full w-full bg-[#111318]"
+        className="h-full w-full bg-[#111113]"
         attributionControl={true}
       >
         {/* CartoDB Dark Matter / Positron Tiles */}
@@ -176,9 +176,9 @@ export function LiveMapInner({
               key={route.id}
               positions={route.geometry.coordinates.map((pos) => toLeafletLatLng(pos))}
               pathOptions={{
-                color: "#3A3F4D",
+                color: "#2A2A32",
                 weight: 3.5,
-                opacity: 0.45,
+                opacity: 0.55,
                 lineCap: "round",
                 lineJoin: "round",
               }}
@@ -197,7 +197,7 @@ export function LiveMapInner({
               positions={route.geometry.coordinates.map((pos) => toLeafletLatLng(pos))}
               className="viaflow-flow"
               pathOptions={{
-                color: "#E08E45",
+                color: "#F5A623",
                 weight: 6,
                 opacity: 0.95,
                 lineCap: "round",

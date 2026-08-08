@@ -7,8 +7,8 @@ export const LiveMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="aspect-[4/3] w-full min-h-[340px] md:aspect-square animate-pulse rounded-xl border border-[#2A2E38] bg-[#1A1D24] flex items-center justify-center">
-        <span className="font-mono text-xs text-[#8B93A7] tracking-widest">
+      <div className="aspect-[4/3] w-full min-h-[340px] md:aspect-square animate-pulse rounded-xl border border-[#2A2A32] bg-[#1A1A1E] flex items-center justify-center">
+        <span className="font-mono text-xs text-[#8A8A95] tracking-widest">
           INITIALIZING HYDERABAD SPATIAL MAP...
         </span>
       </div>

@@ -42,8 +42,8 @@
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
 
-  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-  --font-mono: var(--font-geist-mono), "JetBrains Mono", "SF Mono", monospace;
+  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", "SF Mono", monospace;
 
   --radius-sm: 4px;
   --radius-md: 6px;
@@ -56,153 +56,153 @@
   --radius: 0.5rem;
 
   /* Default theme is high-precision dark urban mobility engine. */
-  --background: #111318;
-  --foreground: #F3F4F6;
+  --background: #111113;
+  --foreground: #E8E8EC;
 
-  --surface: #1A1D24;
-  --surface-hover: #222630;
-  --surface-foreground: #F3F4F6;
+  --surface: #1A1A1E;
+  --surface-hover: #23232A;
+  --surface-foreground: #E8E8EC;
 
-  --card: #1A1D24;
-  --card-foreground: #F3F4F6;
+  --card: #1A1A1E;
+  --card-foreground: #E8E8EC;
 
-  --popover: #1A1D24;
-  --popover-foreground: #F3F4F6;
+  --popover: #1A1A1E;
+  --popover-foreground: #E8E8EC;
 
   /* ViaFlow Amber Identity */
-  --primary: #E08E45;
-  --primary-foreground: #111318;
+  --primary: #F5A623;
+  --primary-foreground: #111113;
 
-  --secondary: #8B93A7;
-  --secondary-foreground: #F3F4F6;
+  --secondary: #8A8A95;
+  --secondary-foreground: #E8E8EC;
 
-  --muted: #232731;
-  --muted-foreground: #8B93A7;
+  --muted: #23232A;
+  --muted-foreground: #8A8A95;
 
-  --accent: #E08E45;
-  --accent-foreground: #111318;
+  --accent: #F5A623;
+  --accent-foreground: #111113;
 
-  --signal: #10B981;
-  --signal-foreground: #042F2E;
-  --signal-muted: rgba(16, 185, 129, 0.15);
+  --signal: #34D399;
+  --signal-foreground: #111113;
+  --signal-muted: rgba(52, 211, 153, 0.15);
 
-  --warning: #F87171;
-  --caution: #F59E0B;
+  --warning: #EF4444;
+  --caution: #F5A623;
 
   --destructive: #EF4444;
 
-  --border: #2A2E38;
-  --input: #2A2E38;
-  --ring: rgba(224, 142, 69, 0.4);
+  --border: #2A2A32;
+  --input: #2A2A32;
+  --ring: #F5A623;
 
-  --grid: #1F232D;
-  --amber-glow: rgba(224, 142, 69, 0.18);
+  --grid: #23232A;
+  --amber-glow: rgba(245, 166, 35, 0.12);
 
-  --chart-1: #E08E45; /* Reliability / Primary Amber */
+  --chart-1: #F5A623; /* Reliability / Primary Amber */
   --chart-2: #60A5FA; /* Travel Time Blue-Cyan */
-  --chart-3: #F59E0B; /* Distance Amber-Gold */
-  --chart-4: #8B93A7;
-  --chart-5: #F87171;
+  --chart-3: #F5A623; /* Distance Amber-Gold */
+  --chart-4: #8A8A95;
+  --chart-5: #EF4444;
 }
 
 .dark {
   color-scheme: dark;
-  --background: #111318;
-  --foreground: #F3F4F6;
+  --background: #111113;
+  --foreground: #E8E8EC;
 
-  --surface: #1A1D24;
-  --surface-hover: #222630;
-  --surface-foreground: #F3F4F6;
+  --surface: #1A1A1E;
+  --surface-hover: #23232A;
+  --surface-foreground: #E8E8EC;
 
-  --card: #1A1D24;
-  --card-foreground: #F3F4F6;
+  --card: #1A1A1E;
+  --card-foreground: #E8E8EC;
 
-  --popover: #1A1D24;
-  --popover-foreground: #F3F4F6;
+  --popover: #1A1A1E;
+  --popover-foreground: #E8E8EC;
 
-  --primary: #E08E45;
-  --primary-foreground: #111318;
+  --primary: #F5A623;
+  --primary-foreground: #111113;
 
-  --secondary: #8B93A7;
-  --secondary-foreground: #F3F4F6;
+  --secondary: #8A8A95;
+  --secondary-foreground: #E8E8EC;
 
-  --muted: #232731;
-  --muted-foreground: #8B93A7;
+  --muted: #23232A;
+  --muted-foreground: #8A8A95;
 
-  --accent: #E08E45;
-  --accent-foreground: #111318;
+  --accent: #F5A623;
+  --accent-foreground: #111113;
 
-  --signal: #10B981;
-  --signal-foreground: #042F2E;
-  --signal-muted: rgba(16, 185, 129, 0.15);
+  --signal: #34D399;
+  --signal-foreground: #111113;
+  --signal-muted: rgba(52, 211, 153, 0.15);
 
-  --warning: #F87171;
-  --caution: #F59E0B;
+  --warning: #EF4444;
+  --caution: #F5A623;
 
   --destructive: #EF4444;
 
-  --border: #2A2E38;
-  --input: #2A2E38;
-  --ring: rgba(224, 142, 69, 0.4);
+  --border: #2A2A32;
+  --input: #2A2A32;
+  --ring: #F5A623;
 
-  --grid: #1F232D;
-  --amber-glow: rgba(224, 142, 69, 0.18);
+  --grid: #23232A;
+  --amber-glow: rgba(245, 166, 35, 0.12);
 
-  --chart-1: #E08E45;
+  --chart-1: #F5A623;
   --chart-2: #60A5FA;
-  --chart-3: #F59E0B;
-  --chart-4: #8B93A7;
-  --chart-5: #F87171;
+  --chart-3: #F5A623;
+  --chart-4: #8A8A95;
+  --chart-5: #EF4444;
 }
 
 .light {
   color-scheme: light;
   --background: #F4F5F7;
-  --foreground: #111318;
+  --foreground: #111113;
 
   --surface: #FFFFFF;
   --surface-hover: #F8F9FA;
-  --surface-foreground: #111318;
+  --surface-foreground: #111113;
 
   --card: #FFFFFF;
-  --card-foreground: #111318;
+  --card-foreground: #111113;
 
   --popover: #FFFFFF;
-  --popover-foreground: #111318;
+  --popover-foreground: #111113;
 
-  --primary: #D97706;
+  --primary: #F5A623;
   --primary-foreground: #FFFFFF;
 
-  --secondary: #6B7280;
-  --secondary-foreground: #111318;
+  --secondary: #8A8A95;
+  --secondary-foreground: #111113;
 
-  --muted: #E5E7EB;
-  --muted-foreground: #6B7280;
+  --muted: #23232A;
+  --muted-foreground: #8A8A95;
 
-  --accent: #D97706;
+  --accent: #F5A623;
   --accent-foreground: #FFFFFF;
 
-  --signal: #059669;
+  --signal: #34D399;
   --signal-foreground: #FFFFFF;
-  --signal-muted: rgba(5, 150, 105, 0.12);
+  --signal-muted: rgba(52, 211, 153, 0.12);
 
-  --warning: #DC2626;
-  --caution: #D97706;
+  --warning: #EF4444;
+  --caution: #F5A623;
 
-  --destructive: #DC2626;
+  --destructive: #EF4444;
 
-  --border: #E5E7EB;
-  --input: #E5E7EB;
-  --ring: rgba(217, 119, 6, 0.4);
+  --border: #2A2A32;
+  --input: #2A2A32;
+  --ring: #F5A623;
 
-  --grid: #E5E7EB;
-  --amber-glow: rgba(217, 119, 6, 0.15);
+  --grid: #23232A;
+  --amber-glow: rgba(245, 166, 35, 0.12);
 
-  --chart-1: #D97706;
+  --chart-1: #F5A623;
   --chart-2: #2563EB;
-  --chart-3: #D97706;
-  --chart-4: #6B7280;
-  --chart-5: #DC2626;
+  --chart-3: #F5A623;
+  --chart-4: #8A8A95;
+  --chart-5: #EF4444;
 }
 
 @layer base {
@@ -213,8 +213,8 @@
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "cv01", "cv03", "ss01", "tnum";
     background-image: 
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(224, 142, 69, 0.07), transparent 100%),
-      linear-gradient(to bottom, #111318, #111318);
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 166, 35, 0.04), transparent 100%),
+      linear-gradient(to bottom, #111113, #111113);
   }
   
   /* Precision tabular numbers */
@@ -226,13 +226,13 @@
 /* Engine status radar pulse */
 @keyframes engine-pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(224, 142, 69, 0.6);
+    box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.6);
   }
   70% {
-    box-shadow: 0 0 0 8px rgba(224, 142, 69, 0);
+    box-shadow: 0 0 0 8px rgba(245, 166, 35, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(224, 142, 69, 0);
+    box-shadow: 0 0 0 0 rgba(245, 166, 35, 0);
   }
 }
 
@@ -253,20 +253,20 @@
 
 /* Map tiles styling overrides */
 .leaflet-container {
-  background-color: #111318 !important;
+  background-color: #111113 !important;
   font-family: var(--font-sans) !important;
 }
 
 /* Muted Leaflet attribution */
 .leaflet-control-attribution {
-  background: rgba(17, 19, 24, 0.75) !important;
-  color: #8B93A7 !important;
+  background: rgba(17, 17, 19, 0.75) !important;
+  color: #8A8A95 !important;
   font-size: 10px !important;
   backdrop-filter: blur(4px);
   border-top-left-radius: 4px;
 }
 .leaflet-control-attribution a {
-  color: #E08E45 !important;
+  color: #F5A623 !important;
 }
 
 /* Custom Scrollbars */
@@ -275,14 +275,14 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #111318;
+  background: #111113;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2A2E38;
+  background: #2A2A32;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #E08E45;
+  background: #F5A623;
 }
 
 @media (prefers-reduced-motion: reduce) {
